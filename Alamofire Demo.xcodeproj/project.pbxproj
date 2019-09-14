@@ -23,6 +23,7 @@
 		FF570746232D682500E08DFF /* AddPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF570744232D682500E08DFF /* AddPost.storyboard */; };
 		FF570747232D682500E08DFF /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF570745232D682500E08DFF /* AddPostViewController.swift */; };
 		FF57074B232D6B0700E08DFF /* ResponseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF57074A232D6B0700E08DFF /* ResponseName.swift */; };
+		FF57074E232D72DF00E08DFF /* Example+Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF57074D232D72DF00E08DFF /* Example+Func.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FF570744232D682500E08DFF /* AddPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPost.storyboard; sourceTree = "<group>"; };
 		FF570745232D682500E08DFF /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		FF57074A232D6B0700E08DFF /* ResponseName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseName.swift; sourceTree = "<group>"; };
+		FF57074D232D72DF00E08DFF /* Example+Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Example+Func.swift"; sourceTree = "<group>"; };
 		FF7A905B44033A414B05D89C /* Pods-Alamofire DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alamofire DemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alamofire DemoUITests/Pods-Alamofire DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				FF570712232D636600E08DFF /* Assets.xcassets */,
 				FF570714232D636600E08DFF /* LaunchScreen.storyboard */,
 				FF570717232D636600E08DFF /* Info.plist */,
+				FF57074C232D72CC00E08DFF /* Example+Func */,
 				FF570740232D669900E08DFF /* ApiService */,
 				FF57073B232D650400E08DFF /* Model */,
 				FF57073A232D63C500E08DFF /* Controller */,
@@ -221,6 +224,14 @@
 				FF570745232D682500E08DFF /* AddPostViewController.swift */,
 			);
 			path = AddPost;
+			sourceTree = "<group>";
+		};
+		FF57074C232D72CC00E08DFF /* Example+Func */ = {
+			isa = PBXGroup;
+			children = (
+				FF57074D232D72DF00E08DFF /* Example+Func.swift */,
+			);
+			path = "Example+Func";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF57074E232D72DF00E08DFF /* Example+Func.swift in Sources */,
 				FF57073D232D651A00E08DFF /* ErrorResponse.swift in Sources */,
 				FF570742232D66AC00E08DFF /* ApiService.swift in Sources */,
 				FF57073F232D659100E08DFF /* ResponseNames.swift in Sources */,
