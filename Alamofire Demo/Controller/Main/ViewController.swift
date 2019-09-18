@@ -21,9 +21,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Test Api"
         createRightButton()
+        createLeftButton()
         tableView.delegate = self
         tableView.dataSource = self
         loadContent()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (PreferenceManager.instance.isUserLogin ?? false){
+            let alert = UIAlertController(title: "Hey", message: "User registered", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) -> Void in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func addNewToDo() {
@@ -33,44 +48,30 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
+    @objc func addRegister() {
+        let storyboard = UIStoryboard(name: "Register", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
     func createRightButton() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(addNewToDo))
     }
     
+    func createLeftButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(addRegister))
+    }
+    
     func loadContent() {
         ProgressHUD.show()
-        let URL = "https://5bloh8cd4j.execute-api.ap-southeast-1.amazonaws.com/dev/v1/inbistro/read"
-        Alamofire.request(URL, method: .post) .responseJSON { response in
+        APIService.getNames(onSuccess: { (modelObjects) in
             ProgressHUD.dismiss()
-            switch response.result {
-            case .failure(let error) :
-                print(error.localizedDescription)
-                break
-            case .success(let data):
-                print("success")
-                if let responseNames = Mapper<ResponseNames>().map(JSONObject: data){
-                    if (responseNames.errorResponse?.code == 200){
-                        self.names.removeAll()
-                        self.names = responseNames.names
-                    }
-                }
-                print("modelObject : \(self.names.count)")
-                self.tableView.reloadData()
-
-                break
-            }
+            self.names.removeAll()
+            self.names = modelObjects
+            self.tableView.reloadData()
+        }) { (error) in
+            print(error?.message ?? "")
         }
-        
-//        ProgressHUD.show()
-//        APIService.getNoteList(onSuccess: { (modelObjects) in
-//            ProgressHUD.dismiss()
-//            self.modelObjects.removeAll()
-//            self.modelObjects = modelObjects
-//            self.tableView.reloadData()
-//        }) { (error) in
-//            print(error?.message ?? "")
-//        }
-        
     }
     
 }

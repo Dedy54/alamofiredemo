@@ -11,15 +11,15 @@ import ObjectMapper
 
 class ResponseNames: Mappable {
     
-    var errorResponse: ErrorResponse?
-    var names = [Name]()
+    var status: Status?
+    var datas = [Name]()
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        errorResponse <- map["status"]
-        names <- map["data"]
+        status <- map["status"]
+        datas <- map["data"]
     }
 }
 
@@ -34,6 +34,23 @@ class Name: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
+    }
+    
+}
+
+class Status: Mappable {
+    
+    var success: Bool? = false
+    var code: Int? = 0
+    var message: String? = ""
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        code <- map["code"]
+        message <- map["message"]
+        success <- map["success"]
     }
     
 }

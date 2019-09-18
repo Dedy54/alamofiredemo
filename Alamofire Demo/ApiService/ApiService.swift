@@ -20,23 +20,23 @@ class APIService {
     static let UPDATE = "\(CONSTANT_API_URL)/inbistro/update"
     static let DELETE = "\(CONSTANT_API_URL)/inbistro/delete"
     
-    static func getNames(onSuccess: @escaping ([Name])->(), onError: @escaping (ErrorResponse?)->())  {
+    static func getNames(onSuccess: @escaping ([Name])->(), onError: @escaping (Status?)->())  {
         Alamofire.request(self.READ, method: .post).responseJSON { response in
             switch response.result {
             case .success(let value):
                 print(value)
                 var names = [Name]()
                 if let responseNames = Mapper<ResponseNames>().map(JSONObject: value){
-                    if (responseNames.errorResponse?.code == 200){
-                        names = responseNames.names
+                    if (responseNames.status?.code == 200){
+                        names = responseNames.datas
                     } else {
-                        onError(responseNames.errorResponse)
+                        onError(responseNames.status)
                     }
                 }
                 onSuccess(names)
                 break
             case .failure(let error):
-                var e : ErrorResponse? = nil
+                var e : Status? = nil
                 e?.message = error.localizedDescription
                 onError(e)
                 break
@@ -44,15 +44,15 @@ class APIService {
         }
     }
     
-    static func createNames(onSuccess: @escaping ([Name])->(), onError: @escaping (ErrorResponse?)->())  {
+    static func createNames(onSuccess: @escaping ([Name])->(), onError: @escaping (Status?)->())  {
         
     }
     
-    static func updateNames(onSuccess: @escaping ([Name])->(), onError: @escaping (ErrorResponse?)->())  {
+    static func updateNames(onSuccess: @escaping ([Name])->(), onError: @escaping (Status?)->())  {
         
     }
     
-    static func deleteNames(onSuccess: @escaping ([Name])->(), onError: @escaping (ErrorResponse?)->())  {
+    static func deleteNames(onSuccess: @escaping ([Name])->(), onError: @escaping (Status?)->())  {
         
     }
     

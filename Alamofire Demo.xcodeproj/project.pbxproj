@@ -24,6 +24,9 @@
 		FF570747232D682500E08DFF /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF570745232D682500E08DFF /* AddPostViewController.swift */; };
 		FF57074B232D6B0700E08DFF /* ResponseName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF57074A232D6B0700E08DFF /* ResponseName.swift */; };
 		FF57074E232D72DF00E08DFF /* Example+Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF57074D232D72DF00E08DFF /* Example+Func.swift */; };
+		FFF79F4323328A2700BFD63B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF79F4223328A2700BFD63B /* RegisterViewController.swift */; };
+		FFF79F4523328A5200BFD63B /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFF79F4423328A5200BFD63B /* Register.storyboard */; };
+		FFF79F4823328BD700BFD63B /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF79F4723328BD700BFD63B /* PreferenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		FF57074A232D6B0700E08DFF /* ResponseName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseName.swift; sourceTree = "<group>"; };
 		FF57074D232D72DF00E08DFF /* Example+Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Example+Func.swift"; sourceTree = "<group>"; };
 		FF7A905B44033A414B05D89C /* Pods-Alamofire DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alamofire DemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alamofire DemoUITests/Pods-Alamofire DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FFF79F4223328A2700BFD63B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FFF79F4423328A5200BFD63B /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		FFF79F4723328BD700BFD63B /* PreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 				FF570712232D636600E08DFF /* Assets.xcassets */,
 				FF570714232D636600E08DFF /* LaunchScreen.storyboard */,
 				FF570717232D636600E08DFF /* Info.plist */,
+				FFF79F4623328B9500BFD63B /* Helpers */,
 				FF57074C232D72CC00E08DFF /* Example+Func */,
 				FF570740232D669900E08DFF /* ApiService */,
 				FF57073B232D650400E08DFF /* Model */,
@@ -194,6 +201,7 @@
 		FF57073A232D63C500E08DFF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FFF79F4123328A1100BFD63B /* Register */,
 				FF570743232D682500E08DFF /* AddPost */,
 				FF570739232D639300E08DFF /* Main */,
 			);
@@ -232,6 +240,23 @@
 				FF57074D232D72DF00E08DFF /* Example+Func.swift */,
 			);
 			path = "Example+Func";
+			sourceTree = "<group>";
+		};
+		FFF79F4123328A1100BFD63B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FFF79F4223328A2700BFD63B /* RegisterViewController.swift */,
+				FFF79F4423328A5200BFD63B /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FFF79F4623328B9500BFD63B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFF79F4723328BD700BFD63B /* PreferenceManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +371,7 @@
 				FF570716232D636600E08DFF /* LaunchScreen.storyboard in Resources */,
 				FF570713232D636600E08DFF /* Assets.xcassets in Resources */,
 				FF570711232D636400E08DFF /* Main.storyboard in Resources */,
+				FFF79F4523328A5200BFD63B /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +493,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF79F4823328BD700BFD63B /* PreferenceManager.swift in Sources */,
+				FFF79F4323328A2700BFD63B /* RegisterViewController.swift in Sources */,
 				FF57074E232D72DF00E08DFF /* Example+Func.swift in Sources */,
 				FF57073D232D651A00E08DFF /* ErrorResponse.swift in Sources */,
 				FF570742232D66AC00E08DFF /* ApiService.swift in Sources */,

@@ -11,7 +11,7 @@ import ObjectMapper
 
 class ResponseName: Mappable {
     
-    var errorResponse: ErrorResponse?
+    var errorResponse: Status?
     var name : Name?
     
     required init?(map: Map) {
